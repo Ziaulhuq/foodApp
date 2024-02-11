@@ -4,7 +4,7 @@ import Meals from "./Components/Meals/Meals";
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-[80%] m-auto">
       <Header />
       <Meals />
     </div>
