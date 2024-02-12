@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const Meals = () => {
-  return <div>Meals</div>;
-};
+function Meals() {
+  const [loadedMeals, setLoadedMeals] = useState([]);
+
+  useEffect(() => {
+    async function fetchMeals() {
+      const response = await fetch("http://localhost:3000/meals");
+      if (!response.ok) {
+        return;
+      }
+      const meals = await response.json();
+      setLoadedMeals(meals);
+    }
+    fetchMeals();
+  }, []);
+
+  return (
+    <ul>
+      {loadedMeals.map((meal) => (
+        <li key={meal.id}>{meal.name}</li>
+      ))}
+    </ul>
+  );
+}
 
 export default Meals;
