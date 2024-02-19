@@ -7,7 +7,11 @@ const Header = () => {
     <div>
       <div className="w-[90%] flex justify-between m-auto text-slate-200 pt-8">
         <div className="flex justify-start items-center">
-          <img className="w-[5.5rem] h-20" src={logo} />
+          <img
+            className="w-[5.5rem] sm:w-[5.5rem] h-20"
+            src={logo}
+            alt="logo"
+          />
           <span className="text-orange-300 font-bold text-xl shadow-lg">
             Food SHOP
           </span>
