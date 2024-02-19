@@ -6,7 +6,7 @@ const MealItem = ({ meal }) => {
   return (
     <li className="meal-item">
       <article>
-        <img src={`http://localhost:3000/${meal.image}`} />
+        <img src={`http://localhost:3000/${meal.image}`} alt={meal.name} />
         <h3>{meal.name}</h3>
         <p className="meal-item-price">
           {CurrencyFormatter.format(meal.price)}
